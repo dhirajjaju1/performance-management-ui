@@ -6,11 +6,10 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import { GRAPHQL_ENDPOINT } from "./common/constant";
 import * as serviceWorker from "./serviceWorker";
 
 const httpLink = createHttpLink({
-  uri: GRAPHQL_ENDPOINT,
+  uri: process.env.REACT_APP_API_URL+"/apis/graphql/",
 });
 
 const authLink = setContext((_, { headers }) => {

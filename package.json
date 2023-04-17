@@ -19,6 +19,7 @@
     "apollo-link-http": "^1.5.17",
     "axios": "^0.26.1",
     "bootstrap": "^4.6.2",
+    "env-cmd": "^10.1.0",
     "graphql": "^16.6.0",
     "lodash": "^4.17.21",
     "material-table": "^2.0.3",
@@ -35,9 +36,11 @@
     "zod": "^3.21.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
+    "start": "env-cmd -f .env.development react-scripts start",
+    "build": "env-cmd -f .env.production react-scripts build",
+    "test": "react-scripts test",
+    "start:development": "env-cmd -f .env.development react-scripts start",
+    "build:production": "env-cmd -f .env.production react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"

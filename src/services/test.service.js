@@ -1,9 +1,9 @@
 import axios from "axios";
-import { API_ENDPOINT } from "../common/constant";
 
-const API_URL = API_ENDPOINT+"/test/";
+const API_URL = process.env.REACT_APP_API_URL+"/api/test/";
 
 const getPublicContent = () => {
+  console.log(process.env.REACT_APP_API_URL);
   return axios.get(API_URL + "all");
 };
 
